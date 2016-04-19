@@ -1,0 +1,18 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+#canvas-container {
+  width: 100%;
+  text-align: center;
+}
+
+canvas {
+  height: 90vh;
+  width: 90vh;
+  border-style: solid;
+}
