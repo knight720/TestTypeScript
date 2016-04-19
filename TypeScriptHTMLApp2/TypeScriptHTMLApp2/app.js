@@ -15,12 +15,29 @@ var Greeter = (function () {
     };
     return Greeter;
 }());
+var SquareCanvas = (function () {
+    function SquareCanvas(canvas) {
+        this.canvas = canvas;
+        //window.addEventListener("resize", this.onResize);
+        //window.onresize = this.onResize;
+    }
+    SquareCanvas.prototype.onResize = function () {
+        var length = Math.round(Math.min(window.innerWidth, window.innerHeight) * 0.9);
+        console.log(this.value);
+        this.canvas.style.width = length + "px";
+        this.canvas.style.height = length + "px";
+    };
+    return SquareCanvas;
+}());
+var sc;
 window.onload = function () {
     var el = document.getElementById('content');
     var greeter = new Greeter(el);
-    greeter.start();
+    //greeter.start();
     var canvas = document.getElementById('canv');
-    var sc = new SquareCanvas(canvas);
+    //var sc = new SquareCanvas(canvas);
+    sc = new SquareCanvas(canvas);
+    //sc.onResize();
     window.onresize = sc.onResize;
 };
 //# sourceMappingURL=app.js.map
