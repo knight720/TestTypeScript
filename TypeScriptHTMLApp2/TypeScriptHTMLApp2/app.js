@@ -14,7 +14,7 @@ var Greeter = (function () {
         clearTimeout(this.timerToken);
     };
     return Greeter;
-}());
+})();
 var SquareCanvas = (function () {
     function SquareCanvas(canvas) {
         this.canvas = canvas;
@@ -28,7 +28,7 @@ var SquareCanvas = (function () {
         this.canvas.style.height = length + "px";
     };
     return SquareCanvas;
-}());
+})();
 var sc;
 window.onload = function () {
     var el = document.getElementById('content');
