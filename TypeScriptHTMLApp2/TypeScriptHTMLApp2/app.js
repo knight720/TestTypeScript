@@ -14,21 +14,24 @@ var Greeter = (function () {
         clearTimeout(this.timerToken);
     };
     return Greeter;
-})();
+}());
 var SquareCanvas = (function () {
     function SquareCanvas(canvas) {
         this.canvas = canvas;
         //window.addEventListener("resize", this.onResize);
         //window.onresize = this.onResize;
+        window.onresize = this.onResize;
     }
     SquareCanvas.prototype.onResize = function () {
         var length = Math.round(Math.min(window.innerWidth, window.innerHeight) * 0.9);
         console.log(this.value);
-        this.canvas.style.width = length + "px";
-        this.canvas.style.height = length + "px";
+        //this.canvas.style.width = length + "px";
+        //this.canvas.style.height = length + "px";
+        sc.canvas.style.width = length + "px";
+        sc.canvas.style.height = length + "px";
     };
     return SquareCanvas;
-})();
+}());
 var sc;
 window.onload = function () {
     var el = document.getElementById('content');
@@ -38,6 +41,7 @@ window.onload = function () {
     //var sc = new SquareCanvas(canvas);
     sc = new SquareCanvas(canvas);
     //sc.onResize();
-    window.onresize = sc.onResize;
+    //window.onresize = sc.onResize;
+    //window.onresize = sc.onResize.bind(this);
 };
 //# sourceMappingURL=app.js.map
